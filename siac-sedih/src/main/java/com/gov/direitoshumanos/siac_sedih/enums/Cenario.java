@@ -1,4 +1,4 @@
-package com.gov.direitoshumanos.siac_sedih.entidade.enums;
+package com.gov.direitoshumanos.siac_sedih.enums;
 
 public enum Cenario {
     CASA_ONDE_RESIDE_VITIMA_E_SUSPEITO("Casa Onde reside a vítima e o suspeito"),

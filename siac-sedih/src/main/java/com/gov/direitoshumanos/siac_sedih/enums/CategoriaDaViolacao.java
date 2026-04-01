@@ -1,4 +1,4 @@
-package com.gov.direitoshumanos.siac_sedih.entidade.enums;
+package com.gov.direitoshumanos.siac_sedih.enums;
 
 public enum CategoriaDaViolacao {
     INTEGRIDADE_FISICA("Integridade Física"),
