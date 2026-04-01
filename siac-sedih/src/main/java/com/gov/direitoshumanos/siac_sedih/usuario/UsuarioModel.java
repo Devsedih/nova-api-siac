@@ -1,8 +1,13 @@
 package com.gov.direitoshumanos.siac_sedih.usuario;
 
+import com.gov.direitoshumanos.siac_sedih.embeddable.ComposicaoFamiliar;
 import com.gov.direitoshumanos.siac_sedih.embeddable.EnderecoEmbeddable;
 import com.gov.direitoshumanos.siac_sedih.enums.*;
 import jakarta.persistence.*;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -11,9 +16,13 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_usuarios")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @EntityListeners(AuditingEntityListener.class)
 public class UsuarioModel {
 
@@ -105,6 +114,9 @@ public class UsuarioModel {
     //Dados embedabble
     @Embedded
     private EnderecoEmbeddable enderecoEmbeddable;
+
+    @Embedded
+    private ComposicaoFamiliar composicaoFamiliar;
 
     //Dados para auditória e acompanhamento
     @Column(name = "data_de_criacao", nullable = false)
