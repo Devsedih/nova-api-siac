@@ -1,0 +1,296 @@
+<div th:fragment="sidebar">
+
+    <!--
+      =========================================================
+      TOPO DA SIDEBAR (LOGO)
+      =========================================================
+
+      Yago, aqui vai a logo do sistema ou do governo.
+
+      Salva a imagem em:
+      src/main/resources/static/img/logo-ceara.png
+
+      Se quiser trocar depois, só altera o nome do arquivo.
+    -->
+    <div class="px-3 py-3 border-bottom border-success-subtle d-flex align-items-center justify-content-between">
+        <img th:src="@{/img/logo-ceara.png}"
+             alt="Logo SIAC"
+             class="img-fluid"
+             style="max-height: 50px;">
+
+        <!--
+          Yago, esse botão aparece só no mobile (offcanvas).
+          Ele fecha o menu lateral.
+        -->
+        <button class="btn btn-sm btn-outline-light d-lg-none"
+                data-bs-dismiss="offcanvas">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+
+    <!--
+      =========================================================
+      MENU DE NAVEGAÇÃO
+      =========================================================
+    -->
+    <nav class="p-3">
+
+        <ul class="nav flex-column gap-1">
+
+            <!--
+              =========================================================
+              INÍCIO / DASHBOARD
+              =========================================================
+
+              Yago, depois aqui tu troca o href por:
+
+              th:href="@{/dashboard}"
+            -->
+            <li class="nav-item">
+                <a href="#"
+                   class="nav-link text-white d-flex align-items-center gap-2 active bg-success rounded">
+                    <i class="bi bi-house-door"></i>
+                    <span>Início</span>
+                </a>
+            </li>
+
+            <!--
+              =========================================================
+              GERENCIAMENTO DE USUÁRIOS
+              =========================================================
+
+              Yago, esse é um menu com subitens.
+              Ele funciona com Bootstrap collapse.
+            -->
+            <li class="nav-item">
+
+                <button
+                        class="nav-link text-white d-flex align-items-center justify-content-between w-100"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#menuUsuarios"
+                        aria-expanded="false"
+                >
+                    <span class="d-flex align-items-center gap-2">
+                        <i class="bi bi-people"></i>
+                        Gerenciamento de Usuários
+                    </span>
+                    <i class="bi bi-chevron-down small"></i>
+                </button>
+
+                <div class="collapse ps-3" id="menuUsuarios">
+                    <ul class="nav flex-column">
+
+                        <li>
+                            <a href="#"
+                               class="nav-link text-white-50 small">
+                                <i class="bi bi-person"></i>
+                                Cadastro de Usuários
+                            </a>
+
+                            <!--
+                              Yago, rota futura:
+                              th:href="@{/usuarios}"
+                            -->
+                        </li>
+
+                        <li>
+                            <a href="#"
+                               class="nav-link text-white-50 small">
+                                <i class="bi bi-clipboard-check"></i>
+                                Cadastro de Atendimentos
+                            </a>
+
+                            <!--
+                              Yago, rota futura:
+                              th:href="@{/atendimentos}"
+                            -->
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+
+            <!--
+              =========================================================
+              RELATÓRIOS
+              =========================================================
+            -->
+            <li class="nav-item">
+
+                <button
+                        class="nav-link text-white d-flex align-items-center justify-content-between w-100"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#menuRelatorios"
+                >
+                    <span class="d-flex align-items-center gap-2">
+                        <i class="bi bi-file-earmark-text"></i>
+                        Relatórios
+                    </span>
+                    <i class="bi bi-chevron-down small"></i>
+                </button>
+
+                <div class="collapse ps-3" id="menuRelatorios">
+                    <ul class="nav flex-column">
+
+                        <li>
+                            <a href="#"
+                               class="nav-link text-white-50 small">
+                                <i class="bi bi-display"></i>
+                                Auditoria de Atendimentos
+                            </a>
+
+                            <!--
+                              Yago, rota futura:
+                              th:href="@{/relatorios/auditoria}"
+                            -->
+                        </li>
+
+                        <li>
+                            <a href="#"
+                               class="nav-link text-white-50 small">
+                                <i class="bi bi-journal-text"></i>
+                                Prontuário
+                            </a>
+
+                            <!--
+                              Yago, rota futura:
+                              th:href="@{/relatorios/prontuario}"
+                            -->
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+
+            <!--
+              =========================================================
+              DOCUMENTOS
+              =========================================================
+            -->
+            <li class="nav-item">
+
+                <button
+                        class="nav-link text-white d-flex align-items-center justify-content-between w-100"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#menuDocumentos"
+                >
+                    <span class="d-flex align-items-center gap-2">
+                        <i class="bi bi-paperclip"></i>
+                        Documentos
+                    </span>
+                    <i class="bi bi-chevron-down small"></i>
+                </button>
+
+                <div class="collapse ps-3" id="menuDocumentos">
+                    <ul class="nav flex-column">
+
+                        <li>
+                            <a href="#" class="nav-link text-white-50 small">
+                                Autorização senha do processo
+                            </a>
+
+                            <!--
+                              Yago, se isso virar modal:
+                              troca <a> por <button> e chama JS:
+                              onclick="abrirModalAutorizacao()"
+                            -->
+                        </li>
+
+                        <li>
+                            <a href="#" class="nav-link text-white-50 small">
+                                Declaração de comparecimento
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="nav-link text-white-50 small">
+                                Ficha de encaminhamento
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="nav-link text-white-50 small">
+                                Ficha de gratuidade certidão
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="nav-link text-white-50 small">
+                                Relatório de entrevista domiciliar
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+
+            <!--
+              =========================================================
+              GERENCIAMENTO DE ACESSOS
+              =========================================================
+            -->
+            <li class="nav-item">
+                <a href="#"
+                   class="nav-link text-white d-flex align-items-center gap-2">
+                    <i class="bi bi-shield-lock"></i>
+                    Gerenciamento de Acessos
+                </a>
+
+                <!--
+                  Yago, rota futura:
+                  th:href="@{/profissionais}"
+                -->
+            </li>
+
+            <!--
+              =========================================================
+              CONFIGURAÇÕES
+              =========================================================
+            -->
+            <li class="nav-item">
+                <a href="#"
+                   class="nav-link text-white d-flex align-items-center gap-2">
+                    <i class="bi bi-gear"></i>
+                    Configurações
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+
+    <!--
+      =========================================================
+      RODAPÉ (USUÁRIO LOGADO)
+      =========================================================
+
+      Yago, aqui depois tu pode integrar com Spring Security.
+
+      Exemplo futuro:
+      <span th:text="${#authentication.name}"></span>
+    -->
+    <div class="mt-auto border-top border-success-subtle p-3">
+        <div class="d-flex align-items-center gap-2">
+
+            <img th:src="@{/img/user-default.png}"
+                 class="rounded-circle"
+                 width="40"
+                 height="40"
+                 alt="Usuário">
+
+            <div class="flex-grow-1">
+                <div class="fw-semibold text-white small">
+                    Maria Helena
+                </div>
+
+                <div class="text-white-50 small">
+                    Técnico(a)
+                </div>
+
+                <!--
+                  Yago, depois tu pode trocar isso por dados reais do usuário logado
+                -->
+            </div>
+        </div>
+    </div>
+
+</div>
